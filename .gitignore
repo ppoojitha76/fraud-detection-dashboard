@@ -1,0 +1,23 @@
+
+# Environment variables and passwords
+.env
+.env.*
+
+# Python temporary files
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter Notebook temporary files
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+
+# Log files
+*.log
+
+# Windows temporary files
+Thumbs.db
+Desktop.ini
