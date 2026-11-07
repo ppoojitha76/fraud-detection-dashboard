@@ -153,18 +153,14 @@ git clone https://github.com/ppoojitha76/fraud-detection-dashboard.git
 cd fraud-detection-dashboard
 ```
 
-### Step 3: Verify Project Files
 
-```bash
-dir
-```
 
-### Step 4: Install Python Libraries
+### Step 3: Install Python Libraries
 
 ```bash
 pip install pandas numpy sqlalchemy pymysql
 ```
-### Step 5: Configure MySQL
+### Step 4: Configure MySQL
 
 1. Start MySQL Server.
 2. Open MySQL Workbench.
