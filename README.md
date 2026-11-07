@@ -193,7 +193,7 @@ This project helps analyze:
 
 ## Author
 
-**CH Poojitha**
+**CH.Poojitha**
 
 Aspiring Data Analyst
 
