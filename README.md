@@ -125,86 +125,50 @@ These rules help classify potentially suspicious transactions for further analys
 
 ---
 
-## How to Run the Project
+## Project Execution
 
-### Prerequisites
-
-Make sure you have installed:
-
-- Python
-- Git
-- MySQL Server
-- MySQL Workbench
-- Power BI Desktop
-
-### Step 1: Clone the Repository
-
-Open your terminal or command prompt and run:
-
-### Step 1: Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/ppoojitha76/fraud-detection-dashboard.git
 ```
 
-### Step 2: Navigate to the Project Folder
+### 2. Navigate to the Project Folder
 
 ```bash
 cd fraud-detection-dashboard
 ```
 
-
-
-### Step 3: Install Python Libraries
+### 3. Install Required Libraries
 
 ```bash
 pip install pandas numpy sqlalchemy pymysql
 ```
-### Step 4: Configure MySQL
 
-1. Start MySQL Server.
+### 4. Configure MySQL
+
+1. Install and start MySQL Server.
 2. Open MySQL Workbench.
-3. Create the project database.
-4. Import or generate the project data.
-5. Configure your database connection.
+3. Create the database:
 
-**Example MySQL connection code:**
-
-```python
-from sqlalchemy import create_engine
-import os
-
-username = os.getenv("DB_USER")
-password = os.getenv("DB_PASSWORD")
-database = "finshield_fraud_detection"
-
-connection_string = (
-    f"mysql+pymysql://{username}:{password}"
-    f"@localhost:3306/{database}"
-)
-
-engine = create_engine(connection_string)
+```sql
+CREATE DATABASE finshield_fraud_detection;
 ```
 
-**Security:** Store database credentials in environment variables. Never upload passwords to GitHub.
+4. Open the `SQL_queries.sql` file and review the available queries.
+5. Configure your local database connection securely.
 
-### Step 6: Run Python Scripts
+### 5. Open the Power BI Dashboard
 
-Run the data generation and processing scripts from your project folder.
-
-```bash
-python your_script_name.py
-```
-
-Replace `your_script_name.py` with the actual Python filename in your repository.
-
-### Step 7: Open the Power BI Dashboard
-
-1. Open your `.pbix` file in Power BI Desktop.
+1. Open `finshield_dashboard.pbix`.
 2. Configure the MySQL connection if required.
-3. Refresh the data.
-4. Explore the dashboard using filters and visuals.
+3. Refresh the dataset.
+4. Explore both dashboard pages.
 
+### 6. View Dashboard Screenshots
+
+- Executive Dashboard: `executive-dashboard.png`
+- Fraud Intelligence: `fraud-intelligence.png`
 ---
 
 ## Dataset Information
