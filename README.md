@@ -139,7 +139,7 @@ git clone https://github.com/ppoojitha76/fraud-detection-dashboard.git
 cd fraud-detection-dashboard
 ```
 
-### 3. Install Required Libraries
+### 3. Install Python Libraries
 
 ```bash
 pip install pandas numpy sqlalchemy pymysql
@@ -155,8 +155,8 @@ pip install pandas numpy sqlalchemy pymysql
 CREATE DATABASE finshield_fraud_detection;
 ```
 
-4. Open the `SQL_queries.sql` file and review the available queries.
-5. Configure your local database connection securely.
+4. Review the SQL queries in `SQL_queries.sql`.
+5. Configure your local database credentials securely.
 
 ### 5. Open the Power BI Dashboard
 
