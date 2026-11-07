@@ -127,27 +127,27 @@ These rules help classify potentially suspicious transactions for further analys
 
 ## Project Execution
 
-### 1. Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/ppoojitha76/fraud-detection-dashboard.git
 ```
 
-### 2. Navigate to the Project Folder
+### Step 2: Navigate to the Project Folder
 
 ```bash
 cd fraud-detection-dashboard
 ```
 
-### 3. Install Python Libraries
+### Step 3: Install Python Libraries
 
 ```bash
 pip install pandas numpy sqlalchemy pymysql
 ```
 
-### 4. Configure MySQL
+### Step 4: Configure MySQL
 
-1. Install and start MySQL Server.
+1. Start MySQL Server.
 2. Open MySQL Workbench.
 3. Create the database:
 
@@ -155,21 +155,29 @@ pip install pandas numpy sqlalchemy pymysql
 CREATE DATABASE finshield_fraud_detection;
 ```
 
-4. Review the SQL queries in `SQL_queries.sql`.
+4. Review `SQL_queries.sql`.
 5. Configure your local database credentials securely.
 
-### 5. Open the Power BI Dashboard
+### Step 5: Open Power BI
 
 1. Open `finshield_dashboard.pbix`.
 2. Configure the MySQL connection if required.
 3. Refresh the dataset.
 4. Explore both dashboard pages.
 
-### 6. View Dashboard Screenshots
+## Repository Structure
 
-- Executive Dashboard: `executive-dashboard.png`
-- Fraud Intelligence: `fraud-intelligence.png`
----
+```text
+fraud-detection-dashboard/
+│
+├── README.md
+├── SQL_queries.sql
+├── finshield_dashboard.pbix
+├── executive-dashboard.png
+├── fraud-intelligence.png
+├── .gitignore
+└── LICENSE
+```
 
 ## Dataset Information
 
