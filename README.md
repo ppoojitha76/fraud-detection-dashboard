@@ -63,6 +63,7 @@ The project combines Python for data generation and processing, MySQL for databa
 
 ![Fraud Analysis Dashboard](fraud-intelligence.png)
 
+
 ---
 
 ## Key Performance Indicators (KPIs)
