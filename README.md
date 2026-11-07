@@ -57,11 +57,11 @@ The project combines Python for data generation and processing, MySQL for databa
 
 ### 1. Executive Dashboard
 
-![Executive Dashboard](executive_dashboard.p)
+![Executive Dashboard](executive-dashboard.png)
 
 ### 2. Fraud Analysis Dashboard
 
-![Fraud Analysis Dashboard](fraud_analysis.png)
+![Fraud Analysis Dashboard](fraud-intelligence.png)
 
 ---
 
