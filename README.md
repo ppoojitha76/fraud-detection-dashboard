@@ -1,118 +1,162 @@
 
 # FinShield Fraud Detection System
 
+A Financial Transaction Analysis and Fraud Monitoring Project using Python, MySQL, SQL, and Power BI.
+
 ## Project Overview
 
-FinShield is a financial fraud detection and data analytics project developed using Python, MySQL, SQL, and Power BI.
+FinShield is a data analytics project that focuses on analyzing financial transactions and identifying potentially fraudulent activities using rule based fraud scoring.
 
-The project focuses on analyzing financial transactions, identifying potentially suspicious patterns, and presenting business insights through interactive Power BI dashboards.
+The project combines Python for synthetic data generation, MySQL for database management, SQL for data analysis, and Power BI for interactive dashboards.
 
-The main objective is to understand fraud activity, monitor transaction performance, and identify potential financial risks.
+## Business Problem
+
+Financial transactions can involve suspicious activities, unusual transaction patterns, and potential fraud.
+
+FinShield analyzes transaction data to monitor financial performance, identify suspicious patterns, and provide useful insights through interactive dashboards.
 
 ## Project Objectives
 
-- Analyze financial transaction data.
-- Identify potentially suspicious transactions.
-- Perform SQL-based data analysis.
-- Analyze fraud trends and transaction patterns.
-- Monitor financial exposure and risk categories.
+- Generate synthetic financial transaction data.
+- Analyze transaction patterns using Python and SQL.
+- Identify potentially suspicious transactions using rule based scoring.
+- Monitor fraud cases and fraud amounts.
+- Analyze transaction success and failure rates.
 - Build interactive Power BI dashboards.
-- Generate meaningful business insights.
+- Support data driven business decisions.
 
 ## Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| MySQL | Database management |
-| SQL | Data querying and analysis |
-| Power BI | Data visualization |
-| Power Query | Data transformation |
-| DAX | Measures and KPI calculations |
-| Python | Data processing, if used in the project workflow |
+| Python | Data generation and processing |
+| Pandas | Data manipulation |
+| Faker | Synthetic data generation |
+| SQLAlchemy | Database connectivity |
+| MySQL | Data storage |
+| SQL | Data analysis |
+| Power BI | Dashboard development |
+| DAX | KPI calculations |
 
-## Project Workflow
+## Project Architecture
 
-1. Store and manage transaction data in MySQL.
-2. Perform SQL-based data analysis.
-3. Analyze potentially suspicious transactions.
-4. Identify fraud patterns and risk categories.
-5. Connect the database to Power BI.
-6. Create interactive dashboards.
-7. Analyze business performance and fraud trends.
+```text
+Python Data Generation
+        |
+        v
+Synthetic Transaction Data
+        |
+        v
+MySQL Database
+        |
+        v
+SQL Queries and Analysis
+        |
+        v
+Power BI Dashboard
+        |
+        v
+Fraud Monitoring and Insights
+```
 
-## Fraud Detection Logic
+## Database Design
 
-The project uses rule-based scoring to identify potentially suspicious transactions.
+The project contains eight database tables:
 
-Factors considered include:
+1. Customers
+2. Merchants
+3. Devices
+4. Transactions
+5. Fraud_Alerts
+6. Live_Metrics
+7. Daily_Aggregations
+8. Compliance_Logs
 
-- High transaction amounts.
-- Customer risk levels.
-- International transactions.
-- High-risk merchants.
-- KYC verification status.
-- Unusual transaction activity.
+## Fraud Detection Methodology
 
-### Risk Categories
+The project uses rule based fraud scoring to identify potentially suspicious transactions.
 
-| Fraud Score | Risk Category |
-|---|---|
-| 0–29 | Low Risk |
-| 30–59 | Medium Risk |
-| 60–100 | High Risk |
+The analysis focuses on transaction characteristics and assigns risk scores to help monitor potentially risky activities.
 
-These thresholds are project-defined rules. A high-risk score indicates a transaction that may require investigation, not confirmed fraud.
+Key analysis areas:
 
-## MySQL Database
+- Suspicious transaction identification
+- Fraud risk score analysis
+- High risk user monitoring
+- Fraud amount analysis
+- Payment method analysis
+- Transaction success rate analysis
 
-**Database Name:** `finshield_fraud_detection`
+## Power BI Dashboards
 
-The project SQL file is:
+The project contains two dashboard pages.
 
-`SQL_queries.sql`
+### 1. Executive Dashboard
 
-Use MySQL Workbench to review and execute the SQL statements. Check the database and table definitions before running queries.
+Provides an overview of financial transaction performance.
 
-## Power BI Dashboard
-
-The Power BI report contains two analytical pages.
-
-### Page 1: Executive Dashboard
-
-**Business Objective:** Understand overall transaction performance and fraud activity.
-
-Key Performance Indicators:
+**Key Performance Indicators:**
 
 - Total Revenue
 - Success Rate
 - Fraud Cases
-- Active Users
+- Fraud Amount
+- Fraud Rate
 
-Visualizations:
+![Executive Dashboard](Dashboard_Screenshots/executive-dashboard.png)
 
-- Revenue Trend
-- Fraud Cases by User Location
-- Fraud by Payment Method
-- High-Risk Fraud Transactions
+### 2. Fraud Intelligence Dashboard
 
-![Executive Dashboard](executive-dashboard.png)
+Focuses on fraud monitoring and risk analysis.
 
-### Page 2: Fraud Intelligence
+**Key Performance Indicators:**
 
-**Business Objective:** Investigate fraud patterns, risk distribution, and financial exposure.
+- Average Fraud Score
+- High Risk Users
+- Fraud Cases
+- Fraud Amount
+- Fraud Rate
 
-Visualizations:
+![Fraud Intelligence Dashboard](Dashboard_Screenshots/fraud-intelligence.png)
 
-- Risk Category Distribution
-- Fraud Cases Trend Over Time
-- Fraud Amount by Transaction Type
-- Domestic vs International Fraud
-- Fraud Rate by Payment Method
-- Top 5 Merchants by Fraud Amount
+## SQL Analysis
 
-![Fraud Intelligence Dashboard](fraud-intelligence.png)
+SQL queries are used to analyze transaction data and identify business patterns.
 
-## Project Execution
+Analysis includes:
+
+- Fraud by payment method
+- Daily revenue trends
+- Top merchants by revenue
+- Customers with the highest transaction counts
+- Success rate by payment method
+- Fraud rate by payment method
+- Successful transaction amount
+- Top three merchants by state using CTEs and DENSE_RANK()
+
+## Project Folder Structure
+
+```text
+fraud-detection-dashboard/
+│
+├── Dashboard_Screenshots/
+│   ├── executive-dashboard.png
+│   └── fraud-intelligence.png
+│
+├── Python/
+│   ├── finShield_Fraud_Detection.ipynb
+│   └── finShield_Fraud_Detection.py
+│
+├── powerbi/
+│
+├── sql/
+│
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+
+## How to Run the Project
 
 ### Step 1: Clone the Repository
 
@@ -120,85 +164,56 @@ Visualizations:
 git clone https://github.com/ppoojitha76/fraud-detection-dashboard.git
 ```
 
-### Step 2: Navigate to the Project Folder
+### Step 2: Install Required Libraries
 
 ```bash
-cd fraud-detection-dashboard
+pip install pandas faker sqlalchemy pymysql
 ```
 
 ### Step 3: Configure MySQL
 
-1. Start MySQL Server.
-2. Open MySQL Workbench.
-3. Create the database if it does not already exist:
+- Start your MySQL server.
+- Create the required database.
+- Configure your database connection.
+- Execute the SQL scripts in the `sql` folder.
 
-```sql
-CREATE DATABASE finshield_fraud_detection;
-```
+### Step 4: Run Python
 
-4. Open and review `SQL_queries.sql`.
-5. Execute the required SQL statements in MySQL Workbench.
-6. Configure your local database connection securely.
+Open and execute the Python notebook or script in the `Python` folder.
 
-### Step 4: Open Power BI
+### Step 5: Open Power BI
 
-1. Open `finshield_dashboard.pbix`.
-2. Configure the MySQL connection if required.
-3. Refresh the dataset.
-4. Explore both dashboard pages.
+Open the Power BI report from the `powerbi` folder and configure the database connection if required.
 
-## Repository Structure
+## Business Value
 
-```text
-fraud-detection-dashboard/
-│
-├── README.md
-├── SQL_queries.sql
-├── finshield_dashboard.pbix
-├── executive-dashboard.png
-├── fraud-intelligence.png
-├── .gitignore
-└── LICENSE
-```
+FinShield demonstrates how data analytics can help businesses:
 
-## Business Insights
+- Monitor financial transaction performance.
+- Identify potentially suspicious transactions.
+- Track fraud related KPIs.
+- Analyze payment methods and merchant performance.
+- Understand transaction trends through dashboards.
 
-This project helps analyze:
+## Project Limitations
 
-- Overall transaction performance.
-- Fraud cases by location.
-- Fraud activity by payment method.
-- Risk category distribution.
-- Fraud amount by transaction type.
-- Domestic versus international fraud.
-- Fraud rates by payment method.
-- Merchants associated with higher fraud amounts.
-
-## Security and Data Handling
-
-- Never upload MySQL passwords or database credentials.
-- Use secure password prompts or environment variables.
-- Do not upload private customer information.
-- Use synthetic data for portfolio demonstrations where applicable.
-- Review SQL statements before executing them.
-
-## Future Improvements
-
-- Improve fraud detection rules.
-- Add data quality validation.
-- Analyze repeat suspicious transactions.
-- Improve fraud risk analysis.
-- Enhance dashboard performance.
-- Add automated data processing.
+- Uses synthetic transaction data.
+- Fraud identification is based on rule based scoring.
+- Designed for analytical demonstration and learning.
+- Not intended as a production ready fraud detection system.
 
 ## Author
 
-**CH.Poojitha**
+**CH Poojitha**
 
 Aspiring Data Analyst
 
-**Technical Skills:** SQL | MySQL | Power BI | Python | Excel | DAX
+**Skills:** SQL | Python | Power BI | MySQL | Excel
 
-**GitHub:** https://github.com/ppoojitha76
+**GitHub:** [ppoojitha76](https://github.com/ppoojitha76)
 
-**Project Repository:** https://github.com/ppoojitha76/fraud-detection-dashboard
+**Project Repository:** [FinShield Fraud Detection System](https://github.com/ppoojitha76/fraud-detection-dashboard)
+
+---
+
+*FinShield Fraud Detection System | Data Analytics Project*
